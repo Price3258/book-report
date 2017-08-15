@@ -1,0 +1,38 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            <h4><%=report.title%></h4>
+        </h3>
+    </div>
+    <div class="panel-body text-left">
+        <div class="media-left">
+            <img src="<%=report.img%>" alt="이미지가 없네용" />
+        </div>
+        <div class="media-body">
+            <div>
+                <h4><%=report.content%></h4>
+            </div>
+            <br>
+            <br>
+            <div>
+                <input id="star" type="text" title="" value="<%=report.star%>" />
+            </div>
+        </div>
+
+    </div>
+</div>
+<div>
+    <a href="/">메인으로 가기</a>
+</div>
+<script>
+    $(document).ready(function() {
+        $("#star").rating('refresh', {
+            showClear: false,
+            disabled: true
+        });
+    });
+</script>
+<!--
+    report table
+    id, title, content, star, book, img , since , user_id
+ -->

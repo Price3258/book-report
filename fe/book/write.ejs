@@ -1,0 +1,35 @@
+<div>
+    <form id="qwe">
+        <div class="form-group row">
+            <h3 id="bookTitle"></h3>
+            <img id="bookImg" src="#" width="128" height="128">
+        </div>
+        <br>
+        <br>
+        <div class="form-group row">
+            <label for="reportTitle" class="col-sm-2 col-form-label">제목</label>
+            <div class="col-sm-7">
+                <input id="reportTitle" class="form-control" type="text" name="reportTitle">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="reportContent" class="col-sm-2 col-form-label">후기</label>
+            <div class="col-sm-7">
+                <textarea id="reportContent" class="form-control" name="reportContent" rows="5"></textarea>
+            </div>
+        </div>
+
+        <div style="text-align:left; margin-left:30%">
+            <input id="star" name="star" class="rating rating-loading" data-min="0" data-max="5" data-step="0.5">
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-default">저장</button>
+
+    </form>
+    <br>
+    <a href="/">메인 페이지로 가기</a>
+</div>
+<script src="/public/js/report.js" />

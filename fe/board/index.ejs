@@ -1,0 +1,90 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Board Page</title>
+</head>
+
+<body class="text-center">
+    <h1 id="page_name">Board Page</h1>
+    <div>
+        <% if(user){%>
+            <a class="text-right" href="/auth/logout"><strong>Logout</strong></a>
+            <br>
+            <%} else{%>
+                <a href="/auth/login"><strong>Login</strong></a>
+                <%}%>
+    </div>
+    <br>
+    <div>
+        <div>
+            <table id="content" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>제목</th>
+                        <th>글쓴이</th>
+                        <th>시간</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%for(var i=leng-((page*page_num)-page_num);i>leng-(page*page_num);i--){
+                        if(i<0){
+                            break;
+                        }else{
+                            var since="";
+                            since+=new Date().getFullYear()+"/";
+                            since+=(new Date().getMonth()+1)+"/";
+                            since+=new Date().getDate();
+                    %>
+                        <tr>
+                            <th>
+                                <%=data[i].id%>
+                            </th>
+                            <th>
+                                <a href="/board/content/<%=data[i].id%>">
+                                    <%=data[i].title%>
+                                </a>
+                            </th>
+                            <th>
+                                <%=data[i].displayName%>
+                            </th>
+                            <th>
+                                <%=since%>
+                            </th>
+                        </tr>
+                        <%
+                        }
+                    }
+                    %>
+                            <tr>
+                                <td colspan="5">
+                                    <%for(var j=0; j<data.length/10;j++){%>
+                                        [
+                                        <a href="/board/list/<%=j+1%>">
+                                            <%=j+1%>
+                                        </a>]
+                                        <%}%>
+                                </td>
+                            </tr>
+                            <tbody>
+            </table>
+        </div>
+        <br>
+
+        <div id="footer">
+            <% if(user){%>
+                <button class="btn btn-default" onclick="window.location.href='/board/write'">Write</button>
+                <%}%>
+                    <button class="btn btn-default" onclick="window.location.href='/'">Main Page</button>
+        </div>
+        <div>
+</body>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</html>

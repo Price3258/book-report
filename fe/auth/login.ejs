@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login page</title>
+</head>
+
+<body class="text-center">
+    <div>
+        <h1>Login Page</h1>
+        <form action="/auth/login" method="post">
+            <p>
+                <input type="text" name="username" placeholder="username">
+            </p>
+            <p>
+                <input type="password" name="password" placeholder="password">
+            </p>
+            <p>
+                <input class="btn btn-default" type="submit" value="로그인">
+            </p>
+        </form>
+    </div>
+    <div>
+        <a href="/auth/facebook">Facebook Login</a>
+        <br><br>
+    </div>
+    <button class="btn btn-primary" onclick="window.location.href='/'">Main Page</button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!--<link rel="stylesheet" type="text/css" href="/static/css/style.css">-->
+
+</body>
+
+</html>

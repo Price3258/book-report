@@ -1,0 +1,84 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>독후감 쓰기</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="/public/bootstrap-star-rating/css/star-rating.css" media="all" rel="stylesheet" type="text/css" />
+    <script src="/public/bootstrap-star-rating/js/star-rating.js" type="text/javascript"></script>
+    <script src="/public/js/book.js"></script>
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css">
+</head>
+
+<body class="text-center">
+    <h1 id="header">Main page</h1>
+
+    <div class="text-center">
+        <%if (!user){%>
+            <button class="btn btn-default" onclick="window.location.href='/auth/login'">Login</button>
+
+            <button class="btn btn-primary" onclick="window.location.href='/auth/register'">Register</button>
+
+            <%}else{%>
+                <h2>Welcome
+                    <%=user.displayName%>
+                </h2>
+                <button class="btn btn-default" onclick="window.location.href='/auth/logout'">Logout</button>
+                <!-- <a id="write" href="#"><img src="/public/img/notepad.png" width="64" height="64"></a> -->
+                <button class="btn btn-success" id="write">독후감 쓰기</button>                
+                <button class="btn btn-default" onclick="window.location.href='/mine'">나의 페이지</button>
+                <%}%>
+
+                    <button class="btn btn-default" onclick="window.location.href='/board'">게시판으로 가기</button>
+
+
+
+    </div>
+    <br>
+    <br>
+
+    <div id="content">
+        <table id="reportList" class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>img</th>
+                    <th>책 제목</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                <%for(var i=report.length-1;i>=0;i--){%>
+                    <tr>
+                        <td id="report-id" class="vertical-center" width="5%">
+                            <%=report[i].id%>
+                        </td>
+
+                        <td class="vertical-center" width="10%">
+                            <img src=<%=report[i].img%>/>
+                        </td>
+                        <td class="vertical-center" width="25%">
+                            <%=report[i].book%>
+                        </td>
+                        <td class="vertical-center" width="35%">
+                            <%=report[i].title%>
+                        </td>
+                        <td class="vertical-center" width="25%">
+                            <%=report[i].displayName%>
+                        </td>
+                    </tr>
+                    <%}%>
+
+            </tbody>
+        </table>
+    </div>
+
+
+</body>
+
+</html>

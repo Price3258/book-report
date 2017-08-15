@@ -1,0 +1,32 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Board Page</title>
+    </head>
+    <body class="text-center">
+        <h1>Board Page</h1>
+        <div>
+            <table id="content" class="table table-striped">
+                <tr>
+                    <th>#</th>
+                    <th>제목</th>
+                    <th>글쓴이</th>
+                    <th>시간</th>
+                </tr>
+            </table>
+            <p id="page"></p>
+            <div>
+                <p id="write"></p>
+                <button class="btn btn-primary" onclick="window.location.href='/'">Main Page</button>
+            </div>
+        </div>
+    </body>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="/public/bootstrap/css/bootstrap-responsive.css" rel="stylesheet"> 
+    <script src="/public/js/board.js"></script>
+
+</html>

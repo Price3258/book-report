@@ -1,0 +1,26 @@
+<form id="search" action="/search/book" method="post">
+    <div class="form-group row">
+        <label for="book" class="col-sm-2 col-form-label">책 검색</label>
+        <div class="col-sm-10">
+            <input id="book" class="form-control" type="text" name="book">
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-default">검색</button>
+</form>
+
+<div>
+    <table id="bookList" class="table table-hover">
+
+    </table>
+    <a href="#search">위로 가기</a>
+    <br>
+    <a href="/">메인페이지로 가기</a>
+</div>
+<script>
+    $(document).ready(function() {
+        // alert("write page loaded");
+        // var book = new Book();
+        // book.test();
+    });
+</script>
