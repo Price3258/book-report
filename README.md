@@ -3,5 +3,5 @@
 기술 스택
 
 ServerSide : Node.js, Express.js
-FrontEnd : Jqeury, Javascript, EJS
+FrontEnd : Jquery, Javascript, EJS
 DataBase : MariaDB
